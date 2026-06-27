@@ -152,7 +152,7 @@ export default function App() {
               </h1>
               
               <p className="text-slate-600 text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl font-light">
-                Talleres, cursos y programas prácticos de <strong>hábitos de vida saludable</strong> para adolescentes, familias y comunidades escolares. Basado en guías profesionales de salud.
+                Talleres, cursos y programas prácticos de <strong>hábitos de vida saludable</strong> para adolescentes, familias y comunidades escolares. Basados en guías profesionales de salud y diseñados a la medida de cada comunidad.
               </p>
 
               {/* Major conversion callout & Above the fold CTA */}
@@ -186,61 +186,38 @@ export default function App() {
               </div>
             </div>
 
-            {/* Right: Hero Shot Visual Banner and Logo Stack */}
-            <div className="lg:col-span-5 flex flex-col gap-6 relative">
+            {/* Right: Hero Shot Visual Banner holding the new main photo */}
+            <div className="lg:col-span-5 relative">
+              <div className="absolute inset-0 bg-brand-green-light rounded-3xl blur-2xl transform rotate-3 -z-10" />
+              <div className="relative bg-white p-3 rounded-3xl border border-slate-100 shadow-xl overflow-hidden flex items-center justify-center">
+                <img 
+                  src="https://lh3.googleusercontent.com/d/16MTRnr1IFzXwH-4L8SW65h_6xwz0Qdfk" 
+                  alt="Red Cuida - Natalia Prado" 
+                  referrerPolicy="no-referrer"
+                  className="w-full h-auto object-cover rounded-2xl max-h-[500px]"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    const parent = e.currentTarget.parentElement;
+                    if (parent && !parent.querySelector('.fallback-hero-main')) {
+                      const fallback = document.createElement('div');
+                      fallback.className = 'fallback-hero-main w-full h-[350px] flex items-center justify-center bg-brand-green/10 text-brand-green font-display font-extrabold text-2xl rounded-2xl';
+                      fallback.innerText = 'Red Cuida';
+                      parent.appendChild(fallback);
+                    }
+                  }}
+                />
+              </div>
               
-              {/* Family Image Container */}
-              <div className="relative">
-                <div className="absolute inset-0 bg-brand-green-light rounded-3xl blur-2xl transform rotate-3 -z-10" />
-                <div className="relative bg-white p-3 rounded-3xl border border-slate-100 shadow-xl overflow-hidden aspect-[4/3] flex items-center justify-center">
-                  <img 
-                    src="/src/assets/images/bienestar_adolescente_hero_1782560389016.jpg" 
-                    alt="Familia moderna acompañando con amor y seguridad el bienestar de su adolescent, en un entorno de crecimiento saludable y hábitos equilibrados" 
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover rounded-2xl"
-                  />
+              {/* Floating Approved stamp */}
+              <div className="absolute -bottom-5 -left-5 bg-white border border-slate-100 rounded-2xl p-3.5 shadow-lg flex items-center gap-3 max-w-[240px] z-10">
+                <div className="p-2.5 rounded-xl bg-brand-green-light text-brand-green shrink-0">
+                  <ShieldCheck className="w-5 h-5" />
                 </div>
-                
-                {/* Floating Approved stamp */}
-                <div className="absolute -bottom-5 -left-5 bg-white border border-slate-100 rounded-2xl p-3.5 shadow-lg flex items-center gap-3 max-w-[240px] z-10">
-                  <div className="p-2.5 rounded-xl bg-brand-green-light text-brand-green shrink-0">
-                    <ShieldCheck className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Estándar de Promoción</span>
-                    <p className="text-xs font-bold text-slate-800 leading-tight">Hábitos de Salud Escolar</p>
-                  </div>
+                <div>
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Estándar de Promoción</span>
+                  <p className="text-xs font-bold text-slate-800 leading-tight">Hábitos de Salud Escolar</p>
                 </div>
               </div>
-
-              {/* Logo Container of matching style */}
-              <div className="relative bg-white p-6 rounded-3xl border border-slate-100 shadow-xl flex flex-col items-center justify-center min-h-[140px] md:min-h-[160px] overflow-hidden transition-all duration-300 hover:shadow-2xl hover:border-brand-orange/20">
-                <div className="absolute inset-0 bg-gradient-to-tr from-brand-sand/15 via-white to-brand-green-soft/15 opacity-80" />
-                
-                <div className="relative flex flex-col items-center gap-3 text-center">
-                  <img 
-                    src="https://lh3.googleusercontent.com/d/1vxjMrEHu8eMRmIvhXtYurvKkNA-DWk_a" 
-                    referrerPolicy="no-referrer" 
-                    alt="Red Cuida" 
-                    className="h-16 md:h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                      const parent = e.currentTarget.parentElement;
-                      if (parent && !parent.querySelector('.fallback-r-hero-right')) {
-                        const fallback = document.createElement('span');
-                        fallback.className = 'fallback-r-hero-right text-brand-green font-display font-extrabold text-2xl px-4 py-2';
-                        fallback.innerText = 'Red Cuida';
-                        parent.appendChild(fallback);
-                      }
-                    }}
-                  />
-                  <div className="flex flex-col items-center gap-0.5">
-                    <span className="text-[11px] font-extrabold text-brand-orange tracking-[0.15em] uppercase">Red Cuida</span>
-                    <span className="text-[10px] font-medium text-slate-400">Promoción de la Salud Adolescente</span>
-                  </div>
-                </div>
-              </div>
-
             </div>
 
           </div>
