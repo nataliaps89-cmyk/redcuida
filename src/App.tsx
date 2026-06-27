@@ -152,7 +152,7 @@ export default function App() {
               </h1>
               
               <p className="text-slate-600 text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl font-light">
-                Talleres, cursos y programas prácticos de <strong>hábitos de vida saludable</strong> para adolescentes, familias y comunidades escolares. Basados en guías profesionales de salud y diseñados a la medida de cada comunidad.
+                Talleres, cursos y programas prácticos para promover <strong>hábitos de vida saludable</strong> en adolescentes, dirigidos a jóvenes, familias, establecimientos educacionales y comunidades juveniles. Basados en guías profesionales de salud y diseñados a la medida de cada comunidad.
               </p>
 
               {/* Major conversion callout & Above the fold CTA */}
